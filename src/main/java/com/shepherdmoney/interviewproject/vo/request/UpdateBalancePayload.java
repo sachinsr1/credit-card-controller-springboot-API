@@ -12,4 +12,19 @@ public class UpdateBalancePayload {
     private Instant transactionTime;
 
     private double transactionAmount;
+
+    
+    public String getCreditCardNumber() {
+        return creditCardNumber;
+    }
+
+    
+    public Instant getTransactionTime() {
+        return transactionTime;
+    }
+
+   
+    public double getTransactionAmount() {
+        return transactionAmount;
+    }
 }

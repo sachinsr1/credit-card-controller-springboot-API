@@ -12,4 +12,6 @@ public class CreditCardView {
     private String issuanceBank;
 
     private String number;
+
+   
 }

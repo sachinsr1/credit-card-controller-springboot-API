@@ -6,23 +6,30 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "MyUser")
+@Table(name = "users") 
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private int id;
 
     private String name;
 
     private String email;
 
-    // TODO: User's credit card
-    // HINT: A user can have one or more, or none at all. We want to be able to query credit cards by user
-    //       and user by a credit card.
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL) 
+    private List<CreditCard> creditCards;
+
+    // Construct a user
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }

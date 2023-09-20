@@ -10,4 +10,16 @@ public class AddCreditCardToUserPayload {
     private String cardIssuanceBank;
 
     private String cardNumber;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public String getIssuanceBank() {
+        return cardIssuanceBank;
+    }
+
+    public String getNumber() {
+        return cardNumber;
+    }
 }
